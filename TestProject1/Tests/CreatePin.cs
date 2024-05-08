@@ -1,3 +1,4 @@
+using TestProject1.Generator;
 using TestProject1.Model;
 
 
@@ -12,7 +13,7 @@ public class CreatePin
         public void CreateNewPinTestCase()
         {   
             AccountData user = new AccountData("joseph", "123");
-            PinData pin = new PinData("TestPin", "TestText", "/home/joseph/Изображения/kek_files/1_forum_logo.png");
+            PinData pin = TestDataGenerator.GenerateRandomPin();
             
             App.Navigation.OpenHomePage();
             App.Navigation.OpenLoginPage();
