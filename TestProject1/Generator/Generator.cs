@@ -1,23 +1,26 @@
-using System;
+using TestProject1.Model;
 
-namespace TestProject1.Model
+namespace TestProject1.Generator
 {
     public static class TestDataGenerator
     {
-        public static AccountData GenerateRandomAccount()
-        {
+        private static readonly Random _random = new Random();
+        
+        //public static AccountData GenerateRandomAccount()
+        //{
             // Генерация случайного имени пользователя и пароля
-            string username = GenerateRandomString(8);
-            string password = GenerateRandomString(10);
-            return new AccountData(username, password);
-        }
+            //string username = GenerateRandomString(8);
+            //string password = GenerateRandomString(10);
+            //return new AccountData(username, password);
+        //}
+        
 
         public static PinData GenerateRandomPin()
         {
             // Генерация случайного названия, текста и пути к изображению для пина
             string title = GenerateRandomString(10);
             string text = GenerateRandomString(20);
-            string imagePath = GenerateRandomImagePath();
+            string imagePath = GenerateRandomImagePath("/home/joseph/files/");
             return new PinData(title, text, imagePath);
         }
 
@@ -30,10 +33,17 @@ namespace TestProject1.Model
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        private static string GenerateRandomImagePath()
+        public static string GenerateRandomImagePath(string directoryPath)
         {
-            // Генерация случайного пути к изображению (здесь можно использовать вашу логику)
-            return "/path/to/image.png";
+            string[] imageFiles = Directory.GetFiles(directoryPath, "*.png");
+            if (imageFiles.Length == 0)
+            {
+                throw new FileNotFoundException("No PNG image files found in the specified directory.");
+            }
+
+            // Выбираем случайный файл из списка
+            int randomIndex = _random.Next(imageFiles.Length);
+            return imageFiles[randomIndex];
         }
     }
 }
