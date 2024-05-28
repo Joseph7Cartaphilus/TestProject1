@@ -4,15 +4,15 @@ namespace TestProject1.Generator
 {
     public static class TestDataGenerator
     {
-        private static readonly Random _random = new Random();
+        private static readonly Random Random = new Random();
         
-        //public static AccountData GenerateRandomAccount()
-        //{
+        public static AccountData GenerateRandomAccount()
+        {
             // Генерация случайного имени пользователя и пароля
-            //string username = GenerateRandomString(8);
-            //string password = GenerateRandomString(10);
-            //return new AccountData(username, password);
-        //}
+            string username = GenerateRandomString(8);
+            string password = GenerateRandomString(10);
+            return new AccountData(username, password);
+        }
         
 
         public static PinData GenerateRandomPin()
@@ -33,7 +33,7 @@ namespace TestProject1.Generator
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        public static string GenerateRandomImagePath(string directoryPath)
+        private static string GenerateRandomImagePath(string directoryPath)
         {
             string[] imageFiles = Directory.GetFiles(directoryPath, "*.png");
             if (imageFiles.Length == 0)
@@ -42,7 +42,7 @@ namespace TestProject1.Generator
             }
 
             // Выбираем случайный файл из списка
-            int randomIndex = _random.Next(imageFiles.Length);
+            int randomIndex = Random.Next(imageFiles.Length);
             return imageFiles[randomIndex];
         }
     }

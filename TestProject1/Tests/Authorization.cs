@@ -1,4 +1,4 @@
-using NUnit.Framework;
+using TestProject1.Generator;
 using TestProject1.Model;
 
 namespace TestProject1.Tests
@@ -7,7 +7,7 @@ namespace TestProject1.Tests
     public class AuthorizationTest : TestBase 
     {
         [Test]
-        public void Authorization()
+        public void AuthorizationWithValidCredentials()
         {
             AccountData user = new AccountData("joseph", "123");
             
@@ -18,6 +18,21 @@ namespace TestProject1.Tests
             
             // Проверяем успешность авторизации
             Assert.That(App.Auth.IsLoggedIn(user), "Authorization failed");
+        }
+        [Test]
+        public void AuthorizationWithInvalidCredentials()
+        {
+            AccountData invalidUser = TestDataGenerator.GenerateRandomAccount();
+            
+            App.Navigation.OpenHomePage();
+            App.Navigation.OpenLoginPage();
+            App.Auth.Authorization(invalidUser);
+            App.Auth.IsLoggedIn(invalidUser);
+            
+            if (App.Auth.IsLoggedIn(invalidUser))
+            {
+                Assert.Fail("Authorization should have failed with invalid credentials");
+            }
         }
     }
 }

@@ -2,8 +2,14 @@
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;
   &lt;Assembly Path="/home/joseph/.nuget/packages/nunit/4.1.0/lib/net6.0/nunit.framework.dll" /&gt;
 &lt;/AssemblyExplorer&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=435b4d74_002D6af6_002D480d_002Da6a1_002D296fcb5ed86d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=435b4d74_002D6af6_002D480d_002Da6a1_002D296fcb5ed86d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;Solution /&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d6e71361_002Dc83c_002D48c3_002D9e6d_002D5f9f89a36978/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="AuthorizationWithValidCredentials" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::6933AAE2-8B9D-4F26-B1DF-3CE62733EF5D::net8.0::TestProject1.Tests.AuthorizationTest.AuthorizationWithValidCredentials&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::6933AAE2-8B9D-4F26-B1DF-3CE62733EF5D::net8.0::TestProject1.Tests.AuthorizationTest.AuthorizationWithInvalidCredentials&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	
 	
